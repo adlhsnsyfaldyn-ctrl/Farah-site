@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>I Love You ❤️</title>
+
+<style>
+body {
+    background-color: pink;
+    text-align: center;
+    font-family: Arial;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 50px;
+    color: white;
+}
+
+/* الصورة */
+img {
+    width: 300px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+/* زرار الاتصال */
+.call-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 25px;
+    font-size: 20px;
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+/* القلوب */
+.heart {
+    position: fixed;
+    color: red;
+    font-size: 25px;
+    animation: floatUp 4s linear infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity:1; }
+    100% { transform: translateY(-600px); opacity:0; }
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>I LOVE YOU ❤️</h1>
+
+<p style="font-size:25px; color:white;">
+You make my life better every day 💕
+</p>
+
+<!-- الصورة -->
+<img src="photo1.jpg">
+
+<!-- الرقم تحت الصورة -->
+<a href="tel:01003533987" class="call-btn">
+    📞 Call me: 01003533987
+</a>
+
+<script>
+
+/* قلوب طايرة */
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 4000);
+
+}, 300);
+
+</script>
+
+</body>
+</html>

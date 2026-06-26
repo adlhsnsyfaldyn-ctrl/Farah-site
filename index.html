@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+
+<style>
+body {
+    background-color: pink;
+    text-align: center;
+    font-family: Arial;
+    overflow-x: hidden;
+}
+
+/* الجاليري */
+.gallery {
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;    
+    
+}
+
+/* الصور */
+.gallery img {
+    width: 300px;
+    border-radius: 20px;
+    
+
+}
+
+/* حركة الصور */
+.gallery img:hover {
+    transform: scale(1.08) rotate(2deg);
+}
+
+/* الكلام اللي بيظهر */
+#message {
+    margin-top: 20px;
+    font-size: 22px;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+/* الأزرار */
+button {
+    padding: 10px 25px;
+    margin: 15px;
+    font-size: 18px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.yes { background: green; color: white; }
+.no { background: red; color: white; }
+
+/* القلوب */
+.heart {
+    position: fixed;
+    color: red;
+    font-size: 20px;
+    animation: floatUp 4s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {transform: translateY(0); opacity:1;}
+    100% {transform: translateY(-600px); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<h1>Our Memories ❤️</h1>
+
+<!-- الصور -->
+<div class="gallery">
+
+
+<img src="photo1.jpg" onclick="showText('You are my everything ❤️')">
+    <img src="photo2.jpg" onclick="showText('Best memory ever 😍')">
+    <img src="photo3.jpg" onclick="showText('I love you ✨')">
+
+    <img src="photo4.jpg" onclick="showText('My everything 😊')">
+    <img src="photo5.jpg" onclick="showText('My favorite moment ❤️')">
+    <img src="photo6.jpg" onclick="showText('Can’t forget this 💕')">
+
+    <img src="photo7.jpg" onclick="showText('Always together 🤍')">
+    <img src="photo8.jpg" onclick="showText('Forever us 💍')">
+    <img src="photo9.jpg" onclick="showText('My love ❤️')">
+
+</div>
+
+<!-- الكلام -->
+<p id="message">Click any photo ❤️</p>
+
+<h2>Do you still love me? ❤️</h2>
+
+<button class="yes" onclick="goYes()">Yes ❤️</button>
+<button class="no" onclick="goNo()">No 😢</button>
+
+<script>
+
+/* لما تدوس على صورة */
+function showText(text) {
+    document.getElementById("message").innerHTML = text;
+}
+
+/* القلوب */
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 4000);
+}, 300);
+
+/* التنقل */
+function goYes() {
+    window.location.href = "yes.html";
+}
+
+function goNo() {
+    window.location.href = "no.html";
+}
+
+</script>
+
+</body>
+</html>
+``

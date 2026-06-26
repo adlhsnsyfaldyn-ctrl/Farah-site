@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Too late...</title>
+
+<style>
+body {
+    background-color: #2b2b2b; /* رمادي غامق */
+    text-align: center;
+    font-family: Arial;
+    overflow: hidden;
+}
+
+/* الجملة */
+.main-text {
+    font-size: 50px;
+    color: white;
+    margin-top: 150px;
+}
+
+/* القلوب المكسورة */
+.heart {
+    position: fixed;
+    color: #ff4d4d;
+    font-size: 25px;
+    animation: floatUp 4s linear infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity:1; }
+    100% { transform: translateY(-600px); opacity:0; }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="main-text">
+    You are the one who lost... not me 💔💔
+</div>
+
+<script>
+
+/* قلوب مكسورة */
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💔";
